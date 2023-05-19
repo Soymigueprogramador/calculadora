@@ -1,68 +1,71 @@
-body{
-    background-color: black;
-    margin: 0px;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-.conteiner {
-    display: flex; 
-   justify-content: center;
-   align-items: center; 
-   height: 100vh;
+body{
+    min-height: 100vh;
+    background-color: black;
+    border: 4px solid white;
+    display: grid;
+    place-items: center;
+}
+h1{
+    color: white;
+    font-size: 50px;
+}
+h2{
+    color: white;
+    font-size: 35px;
 }
 .calculadora {
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+    width: 350px;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 2rem;
     display: grid;
-    grid-template-columns: repeat(4, 75px); 
-    grid-template-rows: 160px repeat(5, 75px); 
-    background-color: blue;
-    padding: 15px;
-    border-radius: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
 }
-button {
+.pantalla {
+    grid-column: 1 / -1;
+    background-color: black;
+    border: 2px solid white;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: right;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-weight: 600;
+}
+.btn {
+    background-color: white;
+    color: black;
+    border: 0;
+    padding: 1.5rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
     cursor: pointer;
-    margin: 5px;
-    padding: 0px;
-    border-radius: 32px;
-    font-size: 1.5em;
-    border: none; 
-    background-color: black; 
-    box-shadow: 5px 5px 10px --3px rgb(252, 205, 205), -5px -5px 15px 3px rgb(255, 255, 255)1f; 
-} 
-button:active {
-    background-color: blueviolet;
-    border-radius: 15px;
 }
-button:focus {
-    border-radius: 15px;
-    border-color: aliceblue;
+.btn:hover {
+    background-color: deepskyblue;
+    color: black;
 }
-.col-2{
+#cero {
     grid-column: span 2;
 }
-.display {
-    grid-column: 1 / -1;
-    padding: 16px;
-    display: flex;
-    margin: 10px 10px 20px; 
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: black; 
-    border-radius: 32px;
-    text-align: right;
-    justify-content: space-between;
-    word-break: break-all; 
-    box-shadow: 0px 0px 10px black; 
+#igual {
+    grid-row: span 2;
+    background-color: yellow;
+    color: black;
 }
-.numero{
-    color: white;
-}
-.operador{
-    color: white;
-}
-.visible{
-    color: white;
-}
-#valor-actual{
-    font-size: 1.5em;
-}
-#valor-anterior{
-    font-size: 2em;
+#igual:hover {
+    background-color: blue;
+    color:  yellow;
 }
